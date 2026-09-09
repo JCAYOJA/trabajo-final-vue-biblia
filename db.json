@@ -1,0 +1,45 @@
+{
+  "testamentos": [
+    {
+      "id": "1",
+      "nombre": "Antiguo Testamento"
+    },
+    {
+      "id": "2",
+      "nombre": "Nuevo Testamento"
+    }
+  ],
+  "libros": [
+    {
+      "id": "1",
+      "nombre": "Génesis",
+      "capitulos": 50,
+      "testamentoId": "1"
+    },
+    {
+      "id": "2",
+      "nombre": "Éxodo",
+      "capitulos": 40,
+      "testamentoId": "1"
+    },
+    {
+      "id": "3",
+      "nombre": "Mateo",
+      "capitulos": 28,
+      "testamentoId": "2"
+    },
+    {
+      "id": "4",
+      "nombre": "Juan",
+      "capitulos": 21,
+      "testamentoId": "2"
+    },
+    {
+      "nombre": "Apocalipsis",
+      "capitulos": 22,
+      "testamentoId": "2",
+      "id": "w4Z2mlw3n9w"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
