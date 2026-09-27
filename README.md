@@ -44,8 +44,8 @@ Enciende el servidor de desarrollo local para compilar y visualizar la interfaz 
 ```bash
 npm run dev
 ```
+Una vez iniciados ambos servicios, abre tu navegador e ingresa a la dirección provista por la consola (ej. **http://localhost:5173** o **http://localhost:5174**).
 
-Una vez iniciados ambos servicios, abre tu navegador e ingresa a: **[http://localhost:5173](http://localhost:5173)**
 
 ## 🌟 Características Principales
 
