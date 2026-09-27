@@ -1,5 +1,55 @@
 # Vue 3 + Vite
+# 📖 Gestión de Libros Bíblicos
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+Un sistema interactivo para la administración y control de libros bíblicos organizado por testamentos y capítulos. Desarrollado con una interfaz moderna basada en **Material Design** y almacenamiento reactivo local.
 
-Learn more about IDE Support for Vue in the [Vue Docs Scaling up Guide](https://vuejs.org/guide/scaling-up/tooling.html#ide-support).
+## 🚀 Tecnologías Utilizadas
+
+* **Framework:** [Vue.js 3](https://vuejs.org) (Composition API)
+* **Herramienta de Construcción:** [Vite](https://vite.dev)
+* **Librería de Componentes:** [Vuetify 3](https://vuetifyjs.com) (Material UI)
+* **Base de Datos Simulada:** [JSON Server](https://github.com)
+* **Iconos:** Material Design Icons (`@mdi/font`)
+* **Enrutamiento:** Vue Router
+
+## 🛠️ Instalación del Proyecto
+
+Sigue estos pasos para clonar e instalar el proyecto en tu entorno local:
+
+1. **Clonar el repositorio:**
+   ```bash
+   git clone https://github.com/JCAYOJA/trabajo-final-vue-biblia.git
+   cd trabajo-final-vue-biblia
+   ```
+
+2. **Instalar las dependencias de Node:**
+   ```bash
+   npm install
+   ```
+
+## 💻 Ejecución del Sistema
+
+Este sistema requiere que se ejecuten **dos servidores de forma simultánea** en terminales separadas para funcionar correctamente:
+
+### Terminal 1: Servidor Backend (Base de Datos JSON)
+Enciende el servidor que procesa las operaciones de lectura, guardado, edición y eliminación de datos en tu archivo `db.json`:
+```bash
+npx json-server --watch db.json --port 3000
+```
+
+### Terminal 2: Servidor Frontend (Aplicación Web)
+Enciende el servidor de desarrollo local para compilar y visualizar la interfaz web:
+```bash
+npm run dev
+```
+
+Una vez iniciados ambos servicios, abre tu navegador e ingresa a: **[http://localhost:5173](http://localhost:5173)**
+
+## 🌟 Características Principales
+
+* **Filtros en Tiempo Real:** Búsqueda dinámica reactiva por coincidencia de texto e ID de testamento.
+* **Manejo de CRUD Completo:** Permite crear, listar, editar y eliminar libros de la base de datos `db.json`.
+* **Diseño Responsivo:** Interfaz adaptada gracias a los componentes estilizados de Material UI (Vuetify).
+* **Control de Sesión:** Simulación de autenticación local con manejo de rutas protegidas mediante Vue Router.
+
+
