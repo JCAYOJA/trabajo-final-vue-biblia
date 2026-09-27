@@ -1,26 +1,84 @@
 <template>
-  <div class="login-container">
-    <div class="login-card">
-      <h2>🔐 Iniciar Sesión</h2>
-      <p class="subtitle">Acceso al Panel de Administración Bíblico</p>
+  <v-app>
+    <!-- Contenedor centrado para el Login -->
+    <v-container class="fill-height justify-center align-center bg-grey-lighten-4" fluid>
+      <v-responsive max-width="420" class="mx-auto">
+        
+        <!-- Tarjeta de Login -->
+        <v-card class="pa-6 pb-8" elevation="2" rounded="lg">
+          
+          <!-- Encabezado con Logo y Título -->
+          <div class="d-flex flex-column align-center mb-6">
+            <img src="../assets/usip.png" alt="Logo USIP" class="mb-3" style="height: 65px; object-fit: contain;" />
+            <div class="text-h5 font-weight-bold text-grey-darken-4">🔐 Iniciar Sesión</div>
+            <div class="text-subtitle-2 text-grey-darken-1 mt-1 text-center">
+              Acceso al Panel de Administración Bíblico
+            </div>
+          </div>
 
-      <form @submit.prevent="handleLogin">
-        <div class="input-group">
-          <label>Usuario:</label>
-          <input v-model="usuario" type="text" placeholder="Usuario (ej. admin)" required />
-        </div>
+          <!-- Mensaje de Error en caso de credenciales incorrectas -->
+          <v-alert
+            v-if="errorMsg"
+            type="error"
+            variant="tonal"
+            density="compact"
+            class="mb-4 text-body-2"
+            closable
+            @click:close="errorMsg = ''"
+          >
+            {{ errorMsg }}
+          </v-alert>
 
-        <div class="input-group">
-          <label>Contraseña:</label>
-          <input v-model="password" type="password" placeholder="Contraseña (ej. 1234)" required />
-        </div>
+          <!-- Formulario Interactivo -->
+          <v-form @submit.prevent="handleLogin">
+            
+            <!-- Campo Usuario -->
+            <div class="text-subtitle-2 text-grey-darken-3 font-weight-bold mb-1">Usuario:</div>
+            <v-text-field
+              v-model="usuario"
+              placeholder="Usuario (ej. admin)"
+              prepend-inner-icon="mdi-account"
+              variant="outlined"
+              density="comfortable"
+              class="mb-4"
+              required
+              hide-details="auto"
+            ></v-text-field>
 
-        <p v-if="errorMsg" class="error-text">{{ errorMsg }}</p>
+            <!-- Campo Contraseña -->
+            <div class="text-subtitle-2 text-grey-darken-3 font-weight-bold mb-1">Contraseña:</div>
+            <v-text-field
+              v-model="password"
+              :append-inner-icon="mostrarContrasena ? 'mdi-eye-off' : 'mdi-eye'"
+              :type="mostrarContrasena ? 'text' : 'password'"
+              placeholder="Contraseña (ej. 1234)"
+              prepend-inner-icon="mdi-lock"
+              variant="outlined"
+              density="comfortable"
+              class="mb-5"
+              required
+              hide-details="auto"
+              @click:append-inner="mostrarContrasena = !mostrarContrasena"
+            ></v-text-field>
 
-        <button type="submit" class="btn-login">Ingresar</button>
-      </form>
-    </div>
-  </div>
+            <!-- Botón Ingresar -->
+            <v-btn
+              type="submit"
+              color="emerald"
+              block
+              size="large"
+              class="text-white text-none font-weight-bold"
+              style="background-color: #3cb371;"
+            >
+              Ingresar
+            </v-btn>
+
+          </v-form>
+        </v-card>
+
+      </v-responsive>
+    </v-container>
+  </v-app>
 </template>
 
 <script setup>
@@ -31,6 +89,7 @@ const router = useRouter()
 const usuario = ref('')
 const password = ref('')
 const errorMsg = ref('')
+const mostrarContrasena = ref(false) // Controla el ojito de la contraseña
 
 const handleLogin = () => {
   if (usuario.value === 'admin' && password.value === '1234') {
@@ -43,13 +102,7 @@ const handleLogin = () => {
 </script>
 
 <style scoped>
-.login-container { display: flex; justify-content: center; align-items: center; min-height: 60vh; }
-.login-card { background: #ffffff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); width: 100%; max-width: 400px; }
-.subtitle { color: #666; font-size: 14px; margin-bottom: 20px; }
-.input-group { margin-bottom: 15px; text-align: left; }
-.input-group label { display: block; margin-bottom: 5px; font-weight: bold; color: #2c3e50; }
-.input-group input { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
-.error-text { color: #ff5252; font-size: 14px; margin-bottom: 15px; }
-.btn-login { width: 100%; padding: 12px; background: #42b983; color: white; border: none; border-radius: 4px; font-size: 16px; cursor: pointer; font-weight: bold; }
-.btn-login:hover { background: #35495e; }
+.fill-height {
+  min-height: 100vh !important;
+}
 </style>

@@ -13,7 +13,7 @@
     {
       "id": "1",
       "nombre": "Génesis",
-      "capitulos": 50,
+      "capitulos": 90,
       "testamentoId": "1"
     },
     {
@@ -39,6 +39,12 @@
       "capitulos": 22,
       "testamentoId": "2",
       "id": "w4Z2mlw3n9w"
+    },
+    {
+      "nombre": "FILIMON",
+      "capitulos": 1,
+      "testamentoId": "2",
+      "id": "CKjwPSiSO_I"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
