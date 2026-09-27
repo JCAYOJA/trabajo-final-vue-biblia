@@ -1,3 +1,5 @@
+# MODULO 6 Vue 3 + Vite DIPLOMADO EN FULLSTACK DEVELOPER BACK END Y FRONT END. V9 Postgrado - USIP
+# NOMBRE: JHONNY CAYOJA CAHMABI 
 # Vue 3 + Vite
 # 📖 Gestión de Libros Bíblicos
 
