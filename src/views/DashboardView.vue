@@ -1,9 +1,14 @@
 <template>
   <div class="container">
     <div class="header-actions">
-      <h1>📖 Gestion de Libros Bíblicos</h1>
-      <button @click="cerrarSesion" class="btn-logout">Cerrar Sesión 🚪</button>
-    </div>
+  <div class="logo-title-container">
+    <!-- 🖼️ Aquí cargamos tu logo desde la carpeta assets -->
+    <img src="../assets/usip.png" alt="Logo" class="app-logo" />
+    <h1>Gestión de Libros Bíblicos</h1>
+  </div>
+  <button @click="cerrarSesion" class="btn-logout">Cerrar Sesión 🚪</button>
+</div>
+
 
     <!-- 🔍 SECCIÓN DE BÚSQUEDA Y FILTRO -->
     <div class="filtros-box">
@@ -163,4 +168,18 @@ button { cursor: pointer; padding: 8px 14px; border: none; border-radius: 4px; f
 .btn-delete { background: #e74c3c; color: white; }
 .btn-logout { background: #34495e; color: white; }
 .no-data { text-align: center; color: #7f8c8d; font-style: italic; }
+
+/* ⬇️ NUEVOS ESTILOS AGREGADOS PARA EL LOGO ⬇️ */
+.logo-title-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.app-logo {
+  height: 60px; /* 👈 Si lo quieres aún más chico, bájalo a 24px */
+  width: auto;  
+  object-fit: contain;
+}
 </style>
+
